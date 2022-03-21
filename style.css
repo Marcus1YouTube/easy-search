@@ -3,3 +3,39 @@
 * {
     font-family: "Roboto";
 }
+
+body {
+    margin-top: 30px;
+    background-color: rgb(38, 38, 38);
+}
+
+
+.title {
+    color: white;
+}
+
+select, option {
+    width: 40%;
+    text-align: center;
+    color: black;
+    border-radius: none;
+    background-color: rgb(5, 236, 5);
+    font-size: 20px;
+}
+
+.search-q, .submit {
+    font-size: 20px;
+}
+
+.submit {
+    background-color: rgb(5, 236, 5);
+    border: none;
+}
+
+.submit:hover {
+    background-color: red;
+}
+
+.submit:active {
+    background-color: rgb(160, 0, 0);
+}

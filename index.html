@@ -6,9 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gyors Keresés</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>helló</h1>
+    <main align="center">
+        <h1 class="title">GYORS KERESÉS</h1>
+        
+        <select name="search-select" id="search-select">
+            <option default>--- Válaszd ki az oldalat, amin szeretnél keresni! ---</option>
+            <option>YouTube</option>
+            <option>Wikipédia</option>
+            <option>Google</option>
+        </select>
+        <h2 class="title search-engine">Jelenleg semmi nem lett kiválasztva.</h2>
+        <input type="text" placeholder="IDE ÍRD A KERESÉST!!" class="search-q">
+        <button class="submit" onclick="makeSearch()">KERESÉS!</button>
+    </main>
+    
 </body>
 </html>
