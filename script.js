@@ -1,7 +1,33 @@
+class searchMaker {
+  setEngine(engine) {
+    searchEngine = engine;
+  }
+
+  makeSearch() {
+    if (searchEngine.target.value == "YouTube") {
+      window.open(
+        `https://www.youtube.com/search?q=${searchQuery.value}`
+      );
+    }
+    if (searchEngine.target.value == "Wikipédia") {
+      window.open(
+        `https://hu.wikipedia.org/w/index.php?search=${searchQuery.value}`
+      );
+    }
+    if (searchEngine.target.value == "Google") {
+      window.open(`https://www.google.com/search?q=${searchQuery.value}`);
+    } else {
+      return;
+    }
+  }
+}
+
 const searchEngineSelector = document.querySelector("#search-select");
 const searchEngineDisplayer = document.querySelector(".search-engine");
 const searchQuery = document.querySelector(".search-q");
 const searchSubmit = document.querySelector(".submit");
+const search = new searchMaker();
+var searchEngine;
 
 searchEngineSelector.addEventListener("change", (selectedEngine) => {
   if (
@@ -12,22 +38,9 @@ searchEngineSelector.addEventListener("change", (selectedEngine) => {
     return;
   }
   searchEngineDisplayer.innerText = `A kiválasztott keresési oldal: ${selectedEngine.target.value}`;
-  
-  function makeSearch() {
-    console.log(searchQuery.value);
-    console.log(selectedEngine.target.value);
-    if (searchEngineSelector.target.value == "YouTube") {
-      window.open(`youtube.com/search?q=${searchQuery.value}`);
-    }
-    if (searchEngineSelector.target.value == "Wikipédia") {
-      window.open(
-        `https://hu.wikipedia.org/w/index.php?search=${searchQuery.value}`
-      );
-    }
-    if (searchEngineSelector.target.value == "Google") {
-      window.open(`https://www.google.com/search?q=${searchQuery.value}`);
-    } else {
-      alert("Válassz egy keresési oldalat!");
-    }
-  }
+  search.setEngine(selectedEngine);
+});
+
+searchSubmit.addEventListener("click", () => {
+  search.makeSearch();
 });
